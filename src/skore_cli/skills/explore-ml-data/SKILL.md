@@ -173,11 +173,6 @@ The central rule. Surfaced as the first Stop condition below.
   (`data/`, another in-repo folder, an absolute or external path) -
   decouple the two: a `RAW = <LOAD_RAW_DATA>` source vs an `EDA_DIR`
   output. Never assume the raw data is in `data/`.
-- **Shared EDA when `docs/GUIDED.md` exists.** Before offering
-  **run**, follow `iterate-ml-experiment/references/lab_guide.md`
-  § Shared EDA. Hub key `eda` already stored → fetch, record
-  JOURNAL status `done`, and do not ask **re-run**. A teammate
-  still computing → **wait**. The key `eda` is never a model report.
 - **EDA precedes model design (G-EDA).** In bootstrap, the gate fires
   **before** `journal/01_baseline.md` is drafted. It is one
   `AskUserQuestion`, id `G-EDA`. Options are `run` and `skip`, or

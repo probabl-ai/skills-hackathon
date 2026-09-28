@@ -17,23 +17,13 @@ Propose this sentence, and let the student amend it:
 Clinic ON/OFF scores are biased. The target column is the unbiased
 score. The Kaggle holdout is by `patient_id`, not by visit.
 
-## Shared EDA
+## EDA
 
-The hub key `eda` is reserved for the exploratory files
-(`data/eda.py`, `data/eda.md`, `data/eda_<table>.html`). Never `put`
-a model report under `eda`.
-
-Before `G-EDA` runs:
-
-1. Look up the installed `skore` Project API with `python-api` and
-   list keys in the team hub project (`load_skore_credentials()`,
-   then `login(mode="hub")`). Do not invent a storage method.
-2. Key `eda` already present → fetch those files into `data/` and
-   do not compute a second EDA. Record JOURNAL status `done`.
-3. A teammate is still computing it → ask the student to **wait**.
-   Do not start a second run, and do not skip ahead to a model.
-4. Key absent → one person may **run**. After the files exist, store
-   them under `eda` with the API looked up above.
+Each student runs EDA in their own workspace. Follow the regular
+`G-EDA` flow in `explore-ml-data`: **run** / **skip**, or **re-run** /
+**keep** when `data/eda.md` already exists. On **run**, that skill
+writes `data/eda.py`, `data/eda.md`, and `data/eda_<table>.html`
+locally. Hub keys are model reports (`01_dummy`, `02_ridge`, …).
 
 ## What to propose next
 
@@ -43,7 +33,7 @@ section that request skips, then do what they asked.
 
 | Evidence the section is still open | Suggest |
 |---|---|
-| No `data/eda.md` and no hub key `eda` | Shared EDA |
+| No `data/eda.md` | Local EDA (`G-EDA`) |
 | EDA present, no hub report `01_dummy` | Dummy mean, RMSE, row holdout |
 | `01_dummy` present, no `02_ridge` | Ridge on the same row holdout |
 | `02_ridge` present, no `submission.csv` | The guide's Kaggle upload for that Ridge |
